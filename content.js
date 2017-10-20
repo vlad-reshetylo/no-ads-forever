@@ -1,6 +1,6 @@
 (function(){
     var script  = document.createElement('script');
-    script.innerHTML = "console.log('window.stop successfully reassigned!');window.stop = function(){console.log('Ads script tried to ruin your page, but we stopped it!')};console.log('window.stop successfully reassigned!');";
+    script.innerHTML = "console.log('window.stop successfully reassigned!');window.stop = function(){console.log('Ads script tried to ruin your page, but we stopped it!')};";
 
     var clearCheckers = function () {
         clearInterval(firstStyleCheckerId);
