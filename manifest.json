@@ -1,5 +1,6 @@
 {
   "name": "No Ads Forever",
+  "author": "Vlad Reshetilo",
   "version": "0.1",
   "manifest_version": 2,
   "description": "This extension blocks advert which can bypass adblock (or similar extensions) and cannot be locked via them",
