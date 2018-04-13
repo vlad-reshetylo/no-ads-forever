@@ -2,8 +2,8 @@ chrome.webRequest.onBeforeRequest.addListener(
     (details) => { 
         chrome.tabs.sendMessage(details.tabId, { content: "message" }, () => {});
 
-        var startTime = new Date().getTime();
-        var randNumber;
+        const startTime = new Date().getTime();
+        const randNumber;
 
         while ((new Date().getTime() - startTime) < 5000) {
             /* prevent errors on empty fn in loop */
