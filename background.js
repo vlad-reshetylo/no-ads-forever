@@ -3,7 +3,7 @@ chrome.webRequest.onBeforeRequest.addListener(
         chrome.tabs.sendMessage(details.tabId, { content: "message" }, () => {});
 
         const startTime = new Date().getTime();
-        const randNumber;
+        let randNumber;
 
         while ((new Date().getTime() - startTime) < 5000) {
             /* prevent errors on empty fn in loop */
@@ -13,7 +13,13 @@ chrome.webRequest.onBeforeRequest.addListener(
         return { cancel: (randNumber + 1) > 0 };
     },
     {
-        urls: ["*://*.piguiqproxy.com/*", "*://*.amgload.net/*"]
+        urls: [
+            "*://*.piguiqproxy.com/*",
+            "*://*.amgload.net/*",
+            "*://*.dsn-fishki.ru/*",
+            "*://*.rcdn.pro/*",
+            "*://*.smcheck.org/*",
+        ]
     },
     ["blocking"]
 );
