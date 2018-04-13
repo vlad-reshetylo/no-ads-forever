@@ -13,7 +13,13 @@ chrome.webRequest.onBeforeRequest.addListener(
         return { cancel: (randNumber + 1) > 0 };
     },
     {
-        urls: ["*://*.piguiqproxy.com/*", "*://*.amgload.net/*"]
+        urls: [
+            "*://*.piguiqproxy.com/*",
+            "*://*.amgload.net/*",
+            "*://*.dsn-fishki.ru/*",
+            "*://*.rcdn.pro/*",
+            "*://*.smcheck.org/*",
+        ]
     },
     ["blocking"]
 );
