@@ -1,20 +1,19 @@
-chrome.webRequest.onBeforeRequest.addListener (
-    function (details) { 
-        chrome.tabs.sendMessage(details.tabId, {content: "message"}, function (response){
-            // do nothing
-        });           
+chrome.webRequest.onBeforeRequest.addListener(
+    (details) => { 
+        chrome.tabs.sendMessage(details.tabId, { content: "message" }, () => {});
 
-        var startTime = new Date().getTime();
-        var randNumber;
+        const startTime = new Date().getTime();
+        const randNumber;
 
-        while ((new Date().getTime() - startTime) < 5000){
-            randNumber = Math.random(); // because an error can happen if this block is empty, or needless
+        while ((new Date().getTime() - startTime) < 5000) {
+            /* prevent errors on empty fn in loop */
+            randNumber = Math.random();
         }
 
-        return {
-            cancel : (randNumber + 1) > 0 // always true
-        };
+        return { cancel: (randNumber + 1) > 0 };
     },
-    {urls: ["*://*.piguiqproxy.com/*"]},
+    {
+        urls: ["*://*.piguiqproxy.com/*", "*://*.amgload.net/*"]
+    },
     ["blocking"]
 );
