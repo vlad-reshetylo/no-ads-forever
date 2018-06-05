@@ -19,6 +19,7 @@ chrome.webRequest.onBeforeRequest.addListener(
             "*://*.dsn-fishki.ru/*",
             "*://*.rcdn.pro/*",
             "*://*.smcheck.org/*",
+            "*://*.zmctrack.net/*",
         ]
     },
     ["blocking"]
